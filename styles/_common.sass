@@ -1,0 +1,32 @@
+// Grid, width, breakpoints
+$row-width-medium:  720
+$row-width-large:   920
+$row-width-xlarge:  1000
+$row-width-xxlarge: 1120
+
+// Breakpoints
+$breakpoint-medium:   768
+$breakpoint-large:    960
+$breakpoint-xlarge:   1040
+$breakpoint-xxlarge:  1220
+
+
+$screen: "only screen"
+
+$landscape: "(orientation: landscape)"
+$portrait: "(orientation: portrait)"
+
+$small-up:    $screen
+$small-only:  "#{$screen} and (max-width: #{$breakpoint-medium - 1}px)"
+
+$medium-up:   "#{$screen} and (min-width:#{$breakpoint-medium}px)"
+$medium-only: "#{$screen} and (min-width:#{$breakpoint-medium}px) and (max-width:#{$breakpoint-large - 1}px)"
+
+$large-up:    "#{$screen} and (min-width:#{$breakpoint-large}px)"
+$large-only:  "#{$screen} and (min-width:#{$breakpoint-large}px) and (max-width:#{$breakpoint-xlarge - 1}px)"
+
+$xlarge-up:     "#{$screen} and (min-width:#{$breakpoint-xlarge}px)"
+$xlarge-only:   "#{$screen} and (min-width:#{$breakpoint-xlarge}px) and (max-width:#{$breakpoint-xxlarge - 1}px)"
+
+$xxlarge-up:    "#{$screen} and (min-width:#{$breakpoint-xxlarge}px)"
+$xxlarge-only:  "#{$screen} and (min-width:#{$breakpoint-xxlarge}px)"

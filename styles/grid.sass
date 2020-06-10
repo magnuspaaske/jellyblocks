@@ -1,0 +1,112 @@
+@import common
+
+// ============================================================================
+// ROWS AND COLUMNS (taken from Foundation)
+// ============================================================================
+.row,
+.full-row,
+.flex-row
+  position: relative
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  margin-top: 0
+  margin-bottom: 0
+
+.row, .full-row
+  &:before
+    content: " "
+    display: table
+
+  &:after
+    content: " "
+    display: table
+    clear: both
+
+.flex-row
+  @media #{$medium-up}
+    display: flex
+
+.column, .columns
+  position: relative
+  padding-left: 0
+  padding-right: 0
+
+.row,
+.full-row
+  > .column,
+  > .columns
+    float: left
+    width: 100%
+
+@media #{$small-only}
+  .row,
+  .full-row,
+  .flex-row,
+  .column,
+  .columns
+    box-sizing: border-box
+
+  .row,
+  .full-row,
+  .flex-row,
+    max-width: calc(100% - 40px)
+
+
+// ============================================================================
+// Mixin to make the grid
+// ============================================================================
+@mixin full_grid_visible ($grid_width)
+  .row, .flex-row
+    max-width: #{$grid_width}px
+
+
+// ============================================
+//        GRID MAGIC!!
+// ============================================
+@media #{$medium-only}
+  @include full_grid_visible ($row-width-medium)
+@media #{$large-only}
+  @include full_grid_visible ($row-width-large)
+@media #{$xlarge-up}
+  @include full_grid_visible ($row-width-xlarge)
+// @media #{$xxlarge-up}
+//   @include full_grid_visible ($row-width-xxlarge)
+
+
+// =======================================
+//    SHOW HIDE FUNCTIONALITY
+// =======================================
+@mixin show-hide ($screen-size, $size-only)
+  // $sizes: 'small' 'medium' 'large' 'xlarge' 'xxlarge'
+  $sizes: 'small' 'medium' 'large' 'xlarge'
+  $index: index($sizes, $screen-size)
+
+  @media #{$size-only}
+
+    @for $i from 1 to (length($sizes) + 1)
+      $size: nth($sizes, $i)
+
+      @if $i == $index
+        .hide-for-#{$size}-only
+          // @debug #{$screen-size}
+          display: none !important
+      @else
+        .show-for-#{$size}-only
+          display: none !important
+
+      @if $i > $index
+        .show-for-#{$size}-up
+          display: none !important
+      @else
+        .hide-for-#{$size}-up
+          display: none !important
+
+
+
+// Creating the show hide functions
+@include show-hide (small,    $small-only   )
+@include show-hide (medium,   $medium-only  )
+@include show-hide (large,    $large-only   )
+@include show-hide (xlarge,   $xlarge-only  )
+@include show-hide (xxlarge,  $xxlarge-up   )

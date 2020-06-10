@@ -1,0 +1,34 @@
+//- A menu for jelly blocks
+
+mixin jelly-menu(imgSrc, links, options = {})
+  .menu
+    .flex-row
+      .logo.left.column 
+        if options.homeLink 
+          a(href=options.homeLink)
+            img(
+              src=imgSrc
+              alt=options.homeAlt
+            )
+        else 
+          img(
+            src=imgSrc
+            alt=options.homeAlt            
+          )
+        
+      .right.column
+        a.hamburger
+          .hamburger-inner
+      
+        ul.right-menu
+          each link in links 
+            li
+              if link.className === null              
+                a(href=link.href)
+                  = link.text
+              else 
+                a(
+                  href=link.href 
+                  class=link.className
+                )
+                  = link.text

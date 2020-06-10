@@ -76,7 +76,7 @@ const cssPipeline = [
 
 gulp.task('concat-css', () => {
     return gulp.src(cssPipeline)
-        .pipe(concat('styles.css'))
+        .pipe(concat('jellyblocks.css'))
         .pipe(gulp.dest('./'))
 })
 
@@ -90,7 +90,7 @@ const jsPipeline = [
 
 gulp.task('concat-js', () => {
     return gulp.src(jsPipeline)
-        .pipe(concat('scripts.js'))
+        .pipe(concat('jellyblocks.js'))
         .pipe(gulp.dest('./'))
 })
 

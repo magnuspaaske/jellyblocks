@@ -1,0 +1,30 @@
+// Menu styles for the top menu
+
+.menu
+  box-shadow: 0px -3px 8px rgba(0, 0, 0, 0.3)
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  .flex-row
+    height: 60px
+    justify-content: space-between
+    align-items: center
+
+    .left
+      img
+        max-height: 36px
+    .right
+      ul.right-menu
+        list-style-type: none
+        padding: 0
+        margin: 0
+        li
+          display: inline-block
+          padding: 1em 1.5em
+          &:last-child
+            padding-right: 0
+        a
+          text-decoration: none
+          &:hover
+            text-decoration: underline
