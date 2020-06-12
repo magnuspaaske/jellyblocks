@@ -21,7 +21,7 @@ gulp.task('sass', () => {
             sourceComments: true,
             sourcemap: 'none',
         }).on('error', sass.logError))
-        .pipe(gulp.dest('./tmp/styles'))
+        .pipe(gulp.dest('./tmp/'))
 })
 
 
@@ -36,21 +36,21 @@ gulp.task('coffee', function () {
             console.log(err.toString())
             this.emit('end')
         })
-        .pipe(gulp.dest('tmp/scripts/'))
+        .pipe(gulp.dest('tmp/'))
 })
 
 
 // CSS copy
 gulp.task('css-copy', () => {
     return gulp.src('styles/**/*.css')
-        .pipe(gulp.dest('tmp/styles'))
+        .pipe(gulp.dest('tmp/'))
 })
 
 
 // JS copy
 gulp.task('js-copy', () => {
     return gulp.src('scripts/**/*.js')
-        .pipe(gulp.dest('tmp/scripts'))
+        .pipe(gulp.dest('tmp/'))
 })
 
 
@@ -59,10 +59,10 @@ gulp.task('tmp-clean', () => {
     return gulp.src('tmp/**/*').pipe(clean())
 })
 gulp.task('css-clean', () => {
-    return gulp.src('tmp/styles/**/*.css').pipe(clean())
+    return gulp.src('tmp/**/*.css').pipe(clean())
 })
 gulp.task('js-clean', () => {
-    return gulp.src('tmp/scripts/**/*.js').pipe(clean())
+    return gulp.src('tmp/**/*.js').pipe(clean())
 })
 
 
@@ -72,7 +72,7 @@ const cssPipeline = [
     'general.css',
     '**/*.css',
     '*.css',
-].map(path => `tmp/styles/${path}`)
+].map(path => `tmp/${path}`)
 
 gulp.task('concat-css', () => {
     return gulp.src(cssPipeline)
@@ -86,7 +86,7 @@ const jsPipeline = [
     'main.js',
     '**/*.js',
     '*.js',
-].map(path => `tmp/scripts/${path}`)
+].map(path => `tmp/${path}`)
 
 gulp.task('concat-js', () => {
     return gulp.src(jsPipeline)
@@ -127,13 +127,13 @@ gulp.task('default', gulp.series(
             'styles/**/*.css',
         ])
         sassWatch.on('change', gulp.series('build-css'))
-        // sassWatch.on('add', gulp.series('build-css'))
+        sassWatch.on('add', gulp.series('build-css'))
 
         const jsWatch = gulp.watch([
             'scripts/**/*.coffee',
             'scripts/**/*.js',
         ])
         jsWatch.on('change', gulp.series('build-js'))
-        // jsWatch.on('add', gulp.series('build-js'))
+        jsWatch.on('add', gulp.series('build-js'))
     }
 ))
