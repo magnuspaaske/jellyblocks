@@ -1,0 +1,26 @@
+section.section
+  position: relative
+  &.bg-section
+    img.background-img
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  &.hero-section
+    height: calc(100vh - 60px)
+    min-height: 600px
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+  .section-column
+    max-width: 720px
+    > *:first-child
+      margin-top: 0
+    > *:last-child
+      margin-bottom: 0

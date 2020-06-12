@@ -1,0 +1,16 @@
+//- A section to take up the full screen
+
+mixin hero-section(className, backgroundImg, options = {})
+  section(
+    class=`hero-section bg-section section ${className}`
+  )
+    if backgroundImg !== null
+      img.background-img(
+        src=backgroundImg
+      )
+    
+    if block 
+      .hero-content.section-content
+        .flex-row
+          .column.section-column
+            block

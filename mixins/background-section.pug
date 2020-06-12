@@ -1,0 +1,15 @@
+//- A section with a background 
+
+mixin background-section(className, backgroundImg, options = {})
+  section(
+    class=`bg-section section ${className}`
+  )
+    img.background-img(
+      src=backgroundImg
+    )
+    
+    if block 
+      .section-content
+        .flex-row
+          .column.section-column
+            block

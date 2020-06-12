@@ -78,8 +78,7 @@
 //    SHOW HIDE FUNCTIONALITY
 // =======================================
 @mixin show-hide ($screen-size, $size-only)
-  // $sizes: 'small' 'medium' 'large' 'xlarge' 'xxlarge'
-  $sizes: 'small' 'medium' 'large' 'xlarge'
+  $sizes: 'small' 'medium' 'large' 'xlarge' 'xxlarge'
   $index: index($sizes, $screen-size)
 
   @media #{$size-only}
@@ -109,4 +108,4 @@
 @include show-hide (medium,   $medium-only  )
 @include show-hide (large,    $large-only   )
 @include show-hide (xlarge,   $xlarge-only  )
-@include show-hide (xxlarge,  $xxlarge-up   )
+@include show-hide (xxlarge,  $xxlarge-only )

@@ -1,0 +1,11 @@
+//- A general section
+
+mixin section(className)
+  section(
+    class=`section ${className}`
+  )
+    if block 
+      .section-content
+        .flex-row 
+          .section-column.column 
+            block
