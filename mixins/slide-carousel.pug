@@ -1,0 +1,20 @@
+//- A carousel of slides 
+
+mixin slide-carousel(className, numOfSlides, options)
+  section(
+    class=`slide-carousel ${className}`
+  )
+    div(
+      class=`carousel-container carousel-${numOfSlides}`
+    )
+      if block 
+        block
+
+    a.nav.prev(href='#')
+    a.nav.next(href='#')
+    
+    ul.active-slide-dots
+      - var n = 0
+      while n < numOfSlides
+        li 
+        - n++

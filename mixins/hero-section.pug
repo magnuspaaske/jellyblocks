@@ -1,8 +1,8 @@
 //- A section to take up the full screen
 
-mixin hero-section(className, backgroundImg, options = {})
+mixin hero-section(className, backgroundImg, options)
   section(
-    class=`hero-section bg-section section ${className}`
+    class=`hero-section bg-section slide-text section ${className}`
   )
     if backgroundImg !== null
       img.background-img(
