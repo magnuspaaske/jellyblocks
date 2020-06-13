@@ -322,35 +322,42 @@ html, body {
   align-items: center;
 }
 
-/* line 17, styles/menu.sass */
-.jelly-menu .flex-row .left img {
-  max-height: 36px;
+/* line 16, styles/menu.sass */
+.jelly-menu .flex-row.full-flex-row {
+  max-width: calc(100% - 20px);
+  width: calc(100% - 20px);
 }
 
-/* line 20, styles/menu.sass */
+/* line 21, styles/menu.sass */
+.jelly-menu .flex-row .left img {
+  max-height: 36px;
+  display: block;
+}
+
+/* line 25, styles/menu.sass */
 .jelly-menu .flex-row .right ul.right-menu {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* line 24, styles/menu.sass */
+/* line 29, styles/menu.sass */
 .jelly-menu .flex-row .right ul.right-menu li {
   display: inline-block;
   padding: 1em 1.5em;
 }
 
-/* line 27, styles/menu.sass */
+/* line 32, styles/menu.sass */
 .jelly-menu .flex-row .right ul.right-menu li:last-child {
   padding-right: 0;
 }
 
-/* line 29, styles/menu.sass */
+/* line 34, styles/menu.sass */
 .jelly-menu .flex-row .right ul.right-menu a {
   text-decoration: none;
 }
 
-/* line 31, styles/menu.sass */
+/* line 36, styles/menu.sass */
 .jelly-menu .flex-row .right ul.right-menu a:hover {
   text-decoration: underline;
 }
@@ -376,22 +383,200 @@ section.section.bg-section img.background-img {
 section.section.hero-section {
   height: calc(100vh - 60px);
   min-height: 600px;
+}
+
+/* line 17, styles/section.sass */
+section.section.slide-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* line 21, styles/section.sass */
+/* line 22, styles/section.sass */
 section.section .section-column {
   max-width: 720px;
 }
 
-/* line 23, styles/section.sass */
+/* line 24, styles/section.sass */
 section.section .section-column > *:first-child {
   margin-top: 0;
 }
 
-/* line 25, styles/section.sass */
+/* line 26, styles/section.sass */
 section.section .section-column > *:last-child {
   margin-bottom: 0;
+}
+
+/* line 31, styles/section.sass */
+section.slide-carousel {
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 34, styles/section.sass */
+section.slide-carousel .carousel-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+/* line 41, styles/section.sass */
+section.slide-carousel .carousel-2 {
+  width: 200vw;
+}
+
+/* line 43, styles/section.sass */
+section.slide-carousel .carousel-2 section {
+  width: calc(100% / 2);
+}
+
+/* line 41, styles/section.sass */
+section.slide-carousel .carousel-3 {
+  width: 300vw;
+}
+
+/* line 43, styles/section.sass */
+section.slide-carousel .carousel-3 section {
+  width: calc(100% / 3);
+}
+
+/* line 41, styles/section.sass */
+section.slide-carousel .carousel-4 {
+  width: 400vw;
+}
+
+/* line 43, styles/section.sass */
+section.slide-carousel .carousel-4 section {
+  width: calc(100% / 4);
+}
+
+/* line 41, styles/section.sass */
+section.slide-carousel .carousel-5 {
+  width: 500vw;
+}
+
+/* line 43, styles/section.sass */
+section.slide-carousel .carousel-5 section {
+  width: calc(100% / 5);
+}
+
+/* line 41, styles/section.sass */
+section.slide-carousel .carousel-6 {
+  width: 600vw;
+}
+
+/* line 43, styles/section.sass */
+section.slide-carousel .carousel-6 section {
+  width: calc(100% / 6);
+}
+
+/* line 41, styles/section.sass */
+section.slide-carousel .carousel-7 {
+  width: 700vw;
+}
+
+/* line 43, styles/section.sass */
+section.slide-carousel .carousel-7 section {
+  width: calc(100% / 7);
+}
+
+/* line 41, styles/section.sass */
+section.slide-carousel .carousel-8 {
+  width: 800vw;
+}
+
+/* line 43, styles/section.sass */
+section.slide-carousel .carousel-8 section {
+  width: calc(100% / 8);
+}
+
+/* line 41, styles/section.sass */
+section.slide-carousel .carousel-9 {
+  width: 900vw;
+}
+
+/* line 43, styles/section.sass */
+section.slide-carousel .carousel-9 section {
+  width: calc(100% / 9);
+}
+
+/* line 46, styles/section.sass */
+section.slide-carousel a.nav {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 80px;
+  width: 40px;
+  top: calc(50% - 40px);
+  z-index: 10;
+  opacity: .5;
+}
+
+/* line 54, styles/section.sass */
+section.slide-carousel a.nav:after {
+  content: ' ';
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  top: 30px;
+}
+
+/* line 62, styles/section.sass */
+section.slide-carousel a.nav:hover {
+  opacity: 1;
+}
+
+/* line 64, styles/section.sass */
+section.slide-carousel a.prev {
+  left: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* line 68, styles/section.sass */
+section.slide-carousel a.prev:after {
+  left: 13px;
+  transform: rotate(45deg);
+}
+
+/* line 71, styles/section.sass */
+section.slide-carousel a.next {
+  right: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+/* line 75, styles/section.sass */
+section.slide-carousel a.next:after {
+  right: 13px;
+  transform: rotate(225deg);
+}
+
+/* line 79, styles/section.sass */
+section.slide-carousel ul.active-slide-dots {
+  position: absolute;
+  z-index: 10;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 88, styles/section.sass */
+section.slide-carousel ul.active-slide-dots li {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 0;
+  height: 10px;
+  width: 10px;
+  border: 2px solid black;
+  border-radius: 7px;
+}
+
+/* line 96, styles/section.sass */
+section.slide-carousel ul.active-slide-dots li.active {
+  background-color: black;
 }
