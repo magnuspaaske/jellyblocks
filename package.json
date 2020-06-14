@@ -1,6 +1,6 @@
 {
   "name": "jellyblocks",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A library of easy to use blocks to quickly layout a website with Jellyapp",
   "main": "index.js",
   "license": "MIT",
