@@ -12,15 +12,17 @@
         slides = $carousel.find('section');
         activeSlide = 0;
         dots = $section.find('ul.active-slide-dots li');
-        console.log(dots[0]);
         slideToSlide = (slide) => {
           dots.removeClass('active');
+          slide = Number(slide);
           return $carousel.animate({
             left: slide * -100 + 'vw'
           }, {
             duration: 300,
             done: () => {
-              return $(dots[slide]).addClass('active');
+              if (activeSlide === slide) {
+                return $(dots[slide]).addClass('active');
+              }
             }
           });
         };
@@ -41,16 +43,17 @@
           slideToSlide(activeSlide);
           return false;
         };
+        dots.click(function() {
+          activeSlide = $(this).data('slide-to');
+          return slideToSlide(activeSlide);
+        });
         $section.find('a.nav.next').click(slideRight);
-        $section.find('a.nav.prev').click(slideLeft);
-        return console.log($section.find('a.nav'));
+        return $section.find('a.nav.prev').click(slideLeft);
       });
     }
   });
 
   // Todo: moving from end to end
   $('.slide-carousel').makeSlideSection();
-
-  console.log($('.slide-carousel'));
 
 }).call(this);

@@ -16,5 +16,5 @@ mixin slide-carousel(className, numOfSlides, options)
     ul.active-slide-dots
       - var n = 0
       while n < numOfSlides
-        li 
+        li(data-slide-to=n)
         - n++

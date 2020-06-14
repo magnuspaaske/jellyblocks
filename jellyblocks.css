@@ -574,9 +574,10 @@ section.slide-carousel ul.active-slide-dots li {
   width: 10px;
   border: 2px solid black;
   border-radius: 7px;
+  cursor: pointer;
 }
 
-/* line 96, styles/section.sass */
+/* line 97, styles/section.sass */
 section.slide-carousel ul.active-slide-dots li.active {
   background-color: black;
 }

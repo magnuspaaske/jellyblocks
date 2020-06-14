@@ -10,16 +10,17 @@ $.fn.extend {
       slides = $carousel.find('section')
       activeSlide = 0
       dots = $section.find('ul.active-slide-dots li')
-      console.log dots[0]
 
       slideToSlide = (slide) =>
         dots.removeClass('active')
+        slide = Number(slide)
         $carousel.animate {
           left: slide * -100 + 'vw'
         }, {
           duration: 300
           done: () =>
-            $(dots[slide]).addClass 'active'
+            if activeSlide == slide
+              $(dots[slide]).addClass 'active'
         }
       slideToSlide(0)
 
@@ -37,13 +38,15 @@ $.fn.extend {
         slideToSlide activeSlide
         return false
 
+      dots.click( ->
+        activeSlide = $(this).data('slide-to')
+        slideToSlide activeSlide
+      )
+
       $section.find('a.nav.next').click slideRight
       $section.find('a.nav.prev').click slideLeft
-
-      console.log $section.find('a.nav')
     )
     # Todo: moving from end to end
 }
 
 $('.slide-carousel').makeSlideSection()
-console.log $('.slide-carousel')
