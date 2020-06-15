@@ -1,3 +1,4 @@
+// General section
 section.section
   position: relative
   &.bg-section
@@ -99,3 +100,39 @@ section.slide-carousel
       cursor: pointer
       &.active
         background-color: black
+
+
+// Section with a picture on the side
+section.picture-column-section
+  position: relative
+  min-height: 600px
+  display: flex
+  align-items: center
+  img.side-image
+    position: absolute
+    top: 0
+    bottom: 0
+    width: 50%
+    height: 100%
+    object-fit: cover
+
+  > .flex-row
+    width: 100%
+    > .column
+      width: 50%
+      box-sizing: border-box
+
+  &.img-left
+    img.side-image
+      left: 0
+    > .flex-row
+      flex-direction: row-reverse
+      > .column
+        padding-left: 40px
+
+  &.img-right
+    img.side-image
+      right: 0
+    > .flex-row
+      > .column
+        padding-right: 40px
