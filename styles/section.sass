@@ -136,3 +136,11 @@ section.picture-column-section
     > .flex-row
       > .column
         padding-right: 40px
+
+
+// Multi column section
+// section.column-section
+@for $i from 2 to 6
+  section.column-section-#{$i}
+    .column
+      width: calc((100% - #{($i - 1) * 40}px) / #{$i})
