@@ -640,3 +640,23 @@ section.picture-column-section.img-right img.side-image {
 section.picture-column-section.img-right > .flex-row > .column {
   padding-right: 40px;
 }
+
+/* line 145, styles/section.sass */
+section.column-section-2 .column {
+  width: calc((100% - 40px) / 2);
+}
+
+/* line 145, styles/section.sass */
+section.column-section-3 .column {
+  width: calc((100% - 80px) / 3);
+}
+
+/* line 145, styles/section.sass */
+section.column-section-4 .column {
+  width: calc((100% - 120px) / 4);
+}
+
+/* line 145, styles/section.sass */
+section.column-section-5 .column {
+  width: calc((100% - 160px) / 5);
+}
