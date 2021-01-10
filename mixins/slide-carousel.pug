@@ -1,4 +1,4 @@
-//- A carousel of slides 
+//- A carousel of slides
 
 mixin slide-carousel(className, numOfSlides, options)
   section(
@@ -7,12 +7,12 @@ mixin slide-carousel(className, numOfSlides, options)
     div(
       class=`carousel-container carousel-${numOfSlides}`
     )
-      if block 
+      if block
         block
 
     a.nav.prev(href='#')
     a.nav.next(href='#')
-    
+
     ul.active-slide-dots
       - var n = 0
       while n < numOfSlides

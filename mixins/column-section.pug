@@ -1,9 +1,9 @@
-//- A section with columns 
+//- A section with columns
 
 mixin column-section(className, numOfColumns)
   section(
     class=`section column-section column-section-${numOfColumns} ${className}`
   )
-    if block 
+    if block
       .row
         block

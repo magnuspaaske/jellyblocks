@@ -1,4 +1,5 @@
 @import common
+@import screen-sizes
 
 // ============================================================================
 // ROWS AND COLUMNS (taken from Foundation)
@@ -13,7 +14,7 @@
   margin-top: 0
   margin-bottom: 0
 
-.row, .full-row
+.row
   &:before
     content: " "
     display: table
@@ -33,7 +34,6 @@
   padding-right: 0
 
 .row,
-.full-row
   > .column,
   > .columns
     float: left
@@ -59,6 +59,8 @@
 @mixin full_grid_visible ($grid_width)
   .row, .flex-row
     max-width: #{$grid_width}px
+  .full-row
+    max-width: calc(100% - 40px)
 
 
 // ============================================

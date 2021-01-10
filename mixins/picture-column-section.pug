@@ -3,14 +3,13 @@
 mixin picture-column-section(className, imgSrc, imgSide)
   section(
     class=`picture-column-section ${className}${imgSide === 'right' ? ' img-right' : ' img-left'}`
-  ) 
+  )
     if imgSrc !== null
       img.side-image(
         src=imgSrc
       )
-    
-    if block 
+
+    if block
       .flex-row
         .column
           block
-        
