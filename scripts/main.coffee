@@ -1,5 +1,21 @@
 console.log 'Hello World from Jelly Blocks'
 
+###
+Set up menu
+###
+$hamburger = $('.menu a.hamburger')
+$menu = $('.menu .right-menu')
+
+$(window).resize( ->
+  $menu.removeClass 'shown'
+)
+
+$('.menu a.hamburger').click( ->
+  $menu.toggleClass 'shown'
+  return false
+)
+
+
 # Stuff for slide carousel
 $.fn.extend {
   makeSlideSection: () ->

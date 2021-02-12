@@ -30,14 +30,28 @@
 
     @media #{$small-only}
       display: flex
+      max-width: calc(100% - 20px)
+      margin: 0 auto
       .column
-        width: auto
+        position: static
         a.hamburger
+          width: 40px
+          height: 40px
+          position: relative
+          display: block
           .hamburger-inner, &:after, &:before
-            width: 20px
+            width: 40px
             height: 3px
-            color: black
+            background-color: white
             content: ' '
+            position: absolute
+          &:before
+            top: 9px
+          .hamburger-inner
+            top: 19px
+          &:after
+            top: 29px
+
 
     .right-menu
       ul
@@ -46,11 +60,25 @@
         margin: 0
 
       @media #{$small-only}
-        height: 100vh
-        width: 80vw
+        height: calc(100vh - 60px)
+        width: 200px
+        top: 60px
         left: 100vw
-        top: 0
         position: absolute
+        background: black
+        z-index: 10
+        transition: 0.3s
+        &.shown
+          left: calc(100vw - 200px)
+        ul
+          padding: 20px
+        li
+          line-height: 40px
+          a
+            text-decoration: none
+            &:hover
+              text-decoration: underline
+
       @media #{$medium-up}
         li
           display: inline-block
