@@ -3,7 +3,9 @@
 mixin jelly-menu(imgSrc, links, options)
   - if (!options) options = {}
 
-  .jelly-menu.menu
+  div(
+    class=`${options.menuClass || ''} jelly-menu menu`
+  )
     div(
       class=`${options.fullRow ? 'full-row' : ''} flex-row`
     )
